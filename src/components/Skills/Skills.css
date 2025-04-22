@@ -1,0 +1,112 @@
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+  
+  .skills-category {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-4);
+    color: var(--color-gray-800);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .skills-category::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-primary);
+  }
+  
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .skill-item {
+    width: 100%;
+  }
+  
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-1);
+  }
+  
+  .skill-name {
+    font-weight: 500;
+    color: var(--color-gray-800);
+  }
+  
+  .skill-percentage {
+    color: var(--color-gray-600);
+  }
+  
+  .skill-bar {
+    height: 8px;
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  
+  .skill-progress {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    position: relative;
+    width: 0;
+    animation: progressAnimation 1.5s ease-in-out forwards;
+  }
+  
+  .skills-extra {
+    margin-top: var(--space-5);
+  }
+  
+  .skills-extra h4 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-3);
+    color: var(--color-gray-800);
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-700);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+  }
+  
+  .tag:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    transform: translateY(-2px);
+  }
+  
+  @keyframes progressAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: var(--data-level, 0%);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skills-container {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
